@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculadora
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list><!--Título do Formulário da aplicação-->
+	  <ion-list-header>Cálculo de Juros</ion-list-header>
+	</ion-list>
+
+	<ion-list><!--Formulário da aplicação-->
+	  <ion-item>
+	    <ion-label color="primary" stacked>N. de Parcelas</ion-label>
+	    <ion-input [(ngModel)]="this.meses" type="number"  placeholder="em X parcelas" clearInput></ion-input>
+	  </ion-item>
+	
+	  <ion-item>
+	    <ion-label color="primary" stacked>Juros Mensal</ion-label>
+	    <ion-input [(ngModel)]="this.juros" (change)="this.onJurosChange()" type="number" placeholder="Juros" clearInput></ion-input>
+	  </ion-item>
+
+	    <ion-item>
+	      <ion-label color="primary"stacked>Valor Prestação</ion-label><ion-label color="black" stacked> (valor da 1. prestação não é no ato)</ion-label>
+	      <ion-input [(ngModel)]="this.prestacao"  type="number"  placeholder="valor da prestação" clearInput></ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label color="primary" stacked>Valor Financiado</ion-label><ion-label color="grey" stacked>(sem contar com o valor de entrada) </ion-label>
+	      <ion-input [(ngModel)]="this.results"  type="number" placeholder="total a ser pago" class="disable"></ion-input>
+	    </ion-item>
+	    
+	</ion-list>
+	<!-- Botões da aplicação-->
+	<button ion-button (click)="this.calculoPrestacao()" id="calcular" color="secondary">Calcular</button>
+	
+	<button ion-button (click)="this.reset()" color="danger">Limpar</button>
+	<button ion-button (click)="this.histreset()"  color="danger">Apagar historico</button>
+	<!--Grid da aplicação-->
+	<ion-grid>
+	  <ion-title>Historico</ion-title>
+	  <ion-row>
+	    <ion-col>meses</ion-col>
+	    <ion-col>juros</ion-col>
+	    <ion-col>valor</ion-col>
+	    <ion-col>resultado</ion-col>
+	  </ion-row>  
+	  <ion-row>
+	    <ion-col>{{ this.historico[0] }}</ion-col>
+	    <ion-col>{{ this.historico[1] }}</ion-col>
+	    <ion-col>{{ this.historico[2] }}</ion-col>
+	    <ion-col>{{ this.historico[3] }}</ion-col>
+	  </ion-row>
+	  <ion-row>
+	      <ion-col>{{ this.historico[4] }}</ion-col>
+	      <ion-col>{{ this.historico[5] }}</ion-col>
+	      <ion-col>{{ this.historico[6] }}</ion-col>
+	      <ion-col>{{ this.historico[7] }}</ion-col>
+	    </ion-row>
+	</ion-grid>  
+
+</ion-content>
