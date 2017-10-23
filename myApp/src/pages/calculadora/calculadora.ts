@@ -20,10 +20,6 @@ export class CalculadoraPage {
 	 this.historico = [];
 	}
 
-	public onJurosChange(value): void{
-    	this.isAbs = false;
-  	}
-
 	/*função responsavel por validar campos*/
 	private validarCampos(): boolean{
 		let retorno:boolean = true;
