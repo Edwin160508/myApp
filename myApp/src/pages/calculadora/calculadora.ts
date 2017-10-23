@@ -7,7 +7,6 @@ import { NavController, AlertController } from 'ionic-angular';
 })
 export class CalculadoraPage {
 	public juros: any;
-	public isAbs: boolean;
 	public prestacao: any;
 	public meses: any;
 	public results: any;
@@ -78,9 +77,7 @@ export class CalculadoraPage {
 	   this.meses = ''; 
 	   this.juros = '';
 	   this.prestacao = '' ;
-	   this.results = ''; 
-	   this.isAbs = false;
-	  
+	   this.results = ''; 	  
 	 }
 	 public histreset() {
 	   this.historico = [];
