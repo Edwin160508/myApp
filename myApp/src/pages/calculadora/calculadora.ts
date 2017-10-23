@@ -25,7 +25,7 @@ export class CalculadoraPage {
   	}
 
 	/*função responsavel por validar campos*/
-	/*public validarCampos(): boolean{
+	private validarCampos(): boolean{
 		let retorno:boolean = true;
 		if(this.meses == undefined){
 		  let alert = this.alertCtrl.create({
@@ -55,10 +55,10 @@ export class CalculadoraPage {
 		    retorno = false;
 		}
 		return retorno;
-	}*/
+	}
 
-	 /*public calculoPrestacao(): void {
-	 	if(validarCampos()){
+	 public calculoPrestacao(): void {
+	 	if(this.validarCampos()){
 	 		this.meses = Number(this.meses); 
 	 		this.juros = Number(this.juros);
 	 		this.prestacao = Number(this.prestacao);  
@@ -76,7 +76,8 @@ export class CalculadoraPage {
 	 		this.historico.push(this.prestacao);
 	 		this.historico.push(this.results);
 	 	}
-	 }*/
+	 }
+	 /*
 	 public calculoPrestacao(): void {
 
 		 if(this.meses == 0 || this.meses == undefined){
@@ -121,7 +122,7 @@ export class CalculadoraPage {
 		     this.historico.push(this.prestacao);
 		     this.historico.push(this.results);
 		}
-	 }
+	 }*/
 
 	 public reset() {
 	   this.meses = ''; 
